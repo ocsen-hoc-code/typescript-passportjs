@@ -14,7 +14,8 @@
                 "node_modules/*"
             ],
             "@src/*":["src/*"],
-            "@controllers/*":["src/controllers/*"]
+            "@controllers/*":["src/controllers/*"],
+            "@routes/*":["src/routes/*"]
         }
     },
     "include": [

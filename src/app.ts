@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import session from 'express-session';
 import passport from "passport";
-import facebookRoute from './routes/facebook.route';
+import facebookRoute from '@routes/facebook.route';
 
 const app = express();
 app.use(session({ secret: "OcSen Hoc Code" }));
