@@ -6,16 +6,16 @@
         "target": "es6",
         "noImplicitAny": true,
         "moduleResolution": "node",
-        "sourceMap": true,
+        "sourceMap": false,
         "outDir": "dist",
         "baseUrl": ".",
         "paths": {
             "*": [
                 "node_modules/*"
             ],
-            "@src/*":["src/*"],
-            "@controllers/*":["src/controllers/*"],
-            "@routes/*":["src/routes/*"]
+            "@src/*":["src/*", "dist/*"],
+            "@controllers/*":["src/controllers/*", "dist/controllers/*"],
+            "@routes/*":["src/routes/*", "dist/routes/*"]
         }
     },
     "include": [
