@@ -12,15 +12,24 @@ facebookRoute.get('/auth/facebook/callback', passport.authenticate('facebook', {
 }));
 
 facebookRoute.get('/success', (req: Request, res: Response): void => {
-    res.json({ msg: 'login success!' });
+    if (req.isAuthenticated()) {
+        res.status(200).json({ msg: 'login success!' });
+        return;
+    }
+    res.redirect('/fail');
 });
 
 facebookRoute.get('/api/me', (req: Request, res: Response): void => {
-    res.json({ profile: req.user });
+
+    if (req.isAuthenticated()) {
+        res.status(200).json({ profile: req.user });
+        return;
+    }
+    res.redirect('/fail');
 });
 
 facebookRoute.get('/fail', (req: Request, res: Response): void => {
-    res.json({ msg: 'login failed!' });
+    res.status(200).json({ msg: 'login failed!' });
 });
 
 facebookRoute.get('/logout', (req: Request, res: Response): void => {
