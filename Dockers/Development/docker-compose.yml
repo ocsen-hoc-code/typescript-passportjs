@@ -6,12 +6,12 @@ services:
     restart: on-failure
     container_name: ocsen-nodejs-dev
     env_file:
-      - .env
+      - ../../.env
     ports:
       - 8888:8888
       - 8001:8001
     volumes:
-      - .:/usr/src/app
+      - ../../:/usr/src/app
     networks:
       - ocsen_network
 

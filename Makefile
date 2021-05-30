@@ -1,28 +1,27 @@
 build-dev: 
 	@echo "=============Build And Starting Service Locally============="
-	docker build -f  Dockers/Development/Dockerfile -t ocsen-nodejs-dev .
-	docker-compose up -d
+	docker build -f Dockers/Development/Dockerfile -t ocsen-nodejs-dev .
+	cd Dockers/Development && docker-compose up -d
 build-release: 
 	@echo "=============Build And Starting Service Locally============="
-	docker build -f  Dockers/Release/Dockerfile -t ocsen-nodejs .
+	docker build -f Dockers/Release/Dockerfile -t ocsen-nodejs .
 	cd Dockers/Release && docker-compose up -d
 up:
 	@echo "=============Starting Service Locally============="
-	docker-compose up -d
+	cd Dockers/Development && docker-compose up -d
 
 up-release:
 	@echo "=============Starting Service Locally============="
 	cd Dockers/Release && docker-compose up -d
 
 logs:
-	docker-compose logs -f
+	cd Dockers/Development && docker-compose logs -f
 
-logs-release:
-	cd Dockers/Release
-	docker-compose logs -f
+logs-release:	
+	cd Dockers/Release && docker-compose logs -f
 
 down:
-	docker-compose down
+	cd Dockers/Development && docker-compose down
 
 down-release:
 	cd Dockers/Release && docker-compose down
