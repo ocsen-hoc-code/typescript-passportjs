@@ -1,1 +1,9 @@
-*/dist/*
+**/dist
+**/node_modules
+.gitignore
+docker-compose.yml
+Makefile
+yarn.lock
+README.md
+.env.example
+.env

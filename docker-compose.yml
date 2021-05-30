@@ -5,6 +5,8 @@ services:
     image: "ocsen-nodejs-dev:latest"
     restart: on-failure
     container_name: ocsen-nodejs-dev
+    env_file:
+      - .env
     ports:
       - 8888:8888
       - 8001:8001
