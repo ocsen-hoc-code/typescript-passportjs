@@ -1,0 +1,18 @@
+version: "3.5"
+
+services:
+  ocsen-nodejs:
+    image: "ocsen-nodejs-dev:latest"
+    restart: on-failure
+    container_name: ocsen-nodejs-dev
+    ports:
+      - 8888:8888
+      - 8001:8001
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - ocsen_network
+
+networks:
+  ocsen_network:
+    driver: bridge

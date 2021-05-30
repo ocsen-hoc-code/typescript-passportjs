@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node -r tsconfig-paths/register dist/index",
-    "dev": "nodemon --inspect=8001 src/index.ts",
+    "dev": "nodemon --inspect=0.0.0.0:8001 src/index.ts",
     "build": "tsc",
     "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
     "test": "echo \"Error: no test specified\" && exit 1"

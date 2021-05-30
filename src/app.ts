@@ -16,6 +16,8 @@ passport.serializeUser((user: any, done: any): void => {
 passport.deserializeUser((user: any, done: any): void => {
     done(null, { ...user });
 });
-app.get('/', (req, res) => { res.json({ msg: 'hello world' }); });
+app.get('/', (req, res) => {
+    res.json({ msg: 'hello world' });
+});
 app.use('/', facebookRoute);
 export default app;
